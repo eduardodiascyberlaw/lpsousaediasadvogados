@@ -97,6 +97,9 @@ export const Navbar = () => {
 
           {/* CTA + CRM access + Mobile toggle */}
           <div className="flex items-center gap-4">
+            <Link href="/contacto" className="hidden lg:inline-flex btn-cta text-[15px] py-3 px-6">
+              COMEÇAR
+            </Link>
             <a
               href="https://app.eduardodiasadvogado.com"
               target="_blank"
@@ -109,9 +112,6 @@ export const Navbar = () => {
               </svg>
               Acesso Interno
             </a>
-            <Link href="/contacto" className="hidden lg:inline-flex btn-cta text-[15px] py-3 px-6">
-              COMEÇAR
-            </Link>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden p-2 text-white"
