@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 export const HeroSection = () => {
   return (
     <section
-      className="relative flex flex-col items-center overflow-hidden bg-[#f0f1f3]"
+      className="relative flex flex-col items-center overflow-hidden bg-white"
       style={{ minHeight: "840px" }}
     >
       {/* Text — upper portion, above Eduardo's head */}
@@ -54,7 +54,7 @@ export const HeroSection = () => {
       {/* Eduardo walking photo — sized smaller, anchored at bottom */}
       <div className="relative mt-auto w-full flex justify-center" style={{ height: "620px" }}>
         <Image
-          src="/images/team/eduardo-dias.jpg"
+          src="/images/team/eduardo-dias.png"
           alt="Dr. Eduardo Dias"
           fill
           className="object-contain object-bottom"
