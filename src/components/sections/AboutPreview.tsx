@@ -37,11 +37,12 @@ export const AboutPreview = () => {
             transition={{ duration: 0.7, delay: 0.15 }}
           >
             <p className="text-body-bold mb-6">
-              NÃO SOMOS UM ESCRITÓRIO DE ADVOCACIA TRADICIONAL. E ISSO É INTENCIONAL.
+              OS CLIENTES COSTUMAM NOS DIZER, &ldquo;VOCÊS NÃO PARECEM ADVOGADOS.&rdquo;
             </p>
             <p className="text-body-regular mb-6">
-              Na Sousa & Dias, acreditamos que a advocacia pode ser mais próxima,
-              mais clara e mais útil para a vida real dos clientes.
+              Consideramos isso o maior elogio. A Sousa & Dias nasceu da convicção
+              de que um escritório de advocacia pode ser diferente: próximo,
+              transparente e verdadeiramente empenhado na vida dos seus clientes.
             </p>
             <p className="text-body-regular mb-6">
               Por isso, dedicamo-nos ao Direito de Imigração e ao Direito do
