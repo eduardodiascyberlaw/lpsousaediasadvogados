@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #252525;
+  background: #ffffff;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings: Bebas Neue (display/thin) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-bebas), Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@layer components {
+  /* ===== SECTION LAYOUTS ===== */
+  .section {
+    @apply px-6 py-20 md:px-12 lg:px-24 lg:py-28;
+  }
+
+  .section-tight {
+    @apply px-6 py-12 md:px-12 lg:px-24 lg:py-16;
+  }
+
+  .container-site {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .container-narrow {
+    @apply max-w-4xl mx-auto;
+  }
+
+  /* ===== GNS SECTION HEADING PATTERN ===== */
+  /* Line 1: Bebas Neue Thin / 104px / #0e76bc / letter-spacing 30px */
+  .section-title {
+    font-family: var(--font-bebas), Impact, sans-serif;
+    font-size: clamp(48px, 8vw, 104px);
+    font-weight: 400;
+    color: #0e76bc;
+    letter-spacing: clamp(8px, 2vw, 30px);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  /* Line 2: Libre Baskerville / 24px / italic / #0e76bc */
+  .section-subtitle {
+    font-family: var(--font-libre), Georgia, serif;
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 300;
+    font-style: italic;
+    color: #0e76bc;
+    line-height: 1.4;
+  }
+
+  /* ===== GNS CTA BUTTON — blue bg, rounded 3px ===== */
+  .btn-cta {
+    @apply inline-flex items-center justify-center;
+    background-color: #0e76bc;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 15px 30px;
+    font-family: var(--font-montserrat), system-ui, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+  .btn-cta:hover {
+    background-color: #0a5d96;
+  }
+
+  .btn-cta-outline {
+    @apply inline-flex items-center justify-center;
+    background-color: transparent;
+    color: #0e76bc;
+    border: 2px solid #0e76bc;
+    border-radius: 3px;
+    padding: 13px 28px;
+    font-family: var(--font-montserrat), system-ui, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+  .btn-cta-outline:hover {
+    background-color: #0e76bc;
+    color: #ffffff;
+  }
+
+  /* ===== BODY TEXT ===== */
+  .text-body-bold {
+    font-family: var(--font-montserrat), system-ui, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #252525;
+    text-transform: uppercase;
+  }
+
+  .text-body-regular {
+    font-family: var(--font-montserrat), system-ui, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #252525;
+    line-height: 32px;
+  }
+
+  /* ===== AWARDS / MUTED HEADING ===== */
+  .heading-muted {
+    font-family: var(--font-bebas), Impact, sans-serif;
+    font-size: 37px;
+    font-weight: 400;
+    color: #adadad;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
