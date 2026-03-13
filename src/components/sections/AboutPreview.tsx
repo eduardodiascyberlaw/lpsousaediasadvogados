@@ -37,22 +37,28 @@ export const AboutPreview = () => {
             transition={{ duration: 0.7, delay: 0.15 }}
           >
             <p className="text-body-bold mb-6">
-              OS CLIENTES COSTUMAM NOS DIZER, &ldquo;VOCÊS NÃO PARECEM ADVOGADOS.&rdquo;
+              NÃO SOMOS UM ESCRITÓRIO DE ADVOCACIA TRADICIONAL. E ISSO É INTENCIONAL.
             </p>
             <p className="text-body-regular mb-6">
-              Consideramos isso o maior elogio. A Sousa & Dias nasceu da convicção
-              de que um escritório de advocacia pode ser diferente: próximo,
-              transparente e verdadeiramente empenhado na vida dos seus clientes.
+              Na Sousa & Dias, acreditamos que a advocacia pode ser mais próxima,
+              mais clara e mais útil para a vida real dos clientes.
             </p>
             <p className="text-body-regular mb-6">
-              Especializamo-nos em Direito de Imigração e Direito do Trabalho
-              porque acreditamos que quem chega a Portugal merece um
-              acompanhamento jurídico de excelência — não apenas competente, mas
-              humano.
+              Por isso, dedicamo-nos ao Direito de Imigração e ao Direito do
+              Trabalho com uma abordagem estratégica, humana e orientada para
+              resultados. Sabemos que, para quem vive fora do seu país, cada
+              decisão jurídica pode ter impacto direto na estabilidade, na
+              família e no futuro.
+            </p>
+            <p className="text-body-regular mb-6">
+              Mais do que apresentar respostas genéricas, procuramos compreender
+              o contexto de cada pessoa para construir soluções práticas,
+              criativas e juridicamente seguras.
             </p>
             <p className="text-body-regular">
-              Funcionamos como uma extensão da sua equipa. Ouvimos primeiro,
-              aconselhamos depois. E lutamos por resultados reais.
+              Ouvimos primeiro. Aconselhamos com clareza. E trabalhamos com
+              verdadeiro compromisso com aquilo que importa: resultados concretos
+              e tranquilidade para seguir em frente.
             </p>
           </motion.div>
 
