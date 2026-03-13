@@ -68,10 +68,10 @@ export const AboutPreview = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <div className="relative aspect-square max-w-[520px] mx-auto">
+            <div className="relative aspect-[9/10] max-w-[520px] mx-auto">
               <Image
-                src="/images/team/eduardo-dias.jpg"
-                alt="Sousa & Dias Advogados"
+                src="/images/team/eduardo-casual.jpg"
+                alt="Dr. Eduardo Dias — Sousa & Dias Advogados"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 520px"
