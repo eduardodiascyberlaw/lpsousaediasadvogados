@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 /*
   GNS Hero exact specs:
-  - Background: light grey #e8e8e8
+  - Background: white #ffffff (matches photo background)
   - Min-height: 840px
   - Text in upper portion, photo smaller in lower portion
   - "100% COM PAIXÃO": Montserrat / 41px / Bold 700 / #363636 / centered
@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 export const HeroSection = () => {
   return (
     <section
-      className="relative flex flex-col items-center overflow-hidden bg-[#e8e8e8]"
+      className="relative flex flex-col items-center overflow-hidden bg-white"
       style={{ minHeight: "840px" }}
     >
       {/* Text — upper portion, above Eduardo's head */}
