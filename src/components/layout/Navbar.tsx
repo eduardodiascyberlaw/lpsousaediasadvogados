@@ -95,8 +95,20 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          {/* CTA + Mobile toggle */}
+          {/* CTA + CRM access + Mobile toggle */}
           <div className="flex items-center gap-4">
+            <a
+              href="https://app.eduardodiasadvogado.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-flex items-center gap-1.5 font-body text-[12px] text-white/50 hover:text-white transition-colors"
+              title="Área do Cliente"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+              Área do Cliente
+            </a>
             <Link href="/contacto" className="hidden lg:inline-flex btn-cta text-[15px] py-3 px-6">
               COMEÇAR
             </Link>
@@ -166,10 +178,21 @@ export const Navbar = () => {
                   )}
                 </div>
               ))}
-              <div className="pt-8">
-                <Link href="/contacto" className="btn-cta w-full text-center" onClick={() => setMobileOpen(false)}>
+              <div className="pt-8 space-y-4">
+                <Link href="/contacto" className="btn-cta w-full text-center block" onClick={() => setMobileOpen(false)}>
                   COMEÇAR
                 </Link>
+                <a
+                  href="https://app.eduardodiasadvogado.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 font-body text-[13px] text-white/40 hover:text-white transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                  </svg>
+                  Área do Cliente
+                </a>
               </div>
             </div>
           </motion.div>
