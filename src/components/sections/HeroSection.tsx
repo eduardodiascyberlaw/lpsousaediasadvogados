@@ -32,7 +32,7 @@ export const HeroSection = () => {
             letterSpacing: "1px",
           }}
         >
-          100% COM PAIXÃO
+          CAMINHAR AO SEU LADO.
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export const HeroSection = () => {
             letterSpacing: "1px",
           }}
         >
-          VAMOS.
+          É o que fazemos.
         </motion.p>
       </div>
 
