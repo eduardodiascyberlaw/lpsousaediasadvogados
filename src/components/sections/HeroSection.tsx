@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 export const HeroSection = () => {
   return (
     <section
-      className="relative flex flex-col items-center overflow-hidden bg-white"
+      className="relative flex flex-col items-center overflow-hidden bg-[#f0f1f3]"
       style={{ minHeight: "840px" }}
     >
       {/* Text — upper portion, above Eduardo's head */}
