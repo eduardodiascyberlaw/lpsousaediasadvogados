@@ -8,12 +8,10 @@ import { BlogPreview } from "@/components/sections/BlogPreview";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 
-/* GNS Law homepage flow:
-   Hero → Welcome → Awards → Navigate Together → What We Do → Founder → Blog → Testimonials → CTA
-*/
 export default function HomePage() {
   return (
     <>
+      <div className="grain-overlay" aria-hidden="true" />
       <HeroSection />
       <AboutPreview />
       <AwardsSection />

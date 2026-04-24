@@ -1,28 +1,29 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Libre_Baskerville, Montserrat } from "next/font/google";
+import { Playfair_Display, Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const bebas = Bebas_Neue({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-bebas",
-  display: "swap",
-});
-
-const libre = Libre_Baskerville({
-  subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   style: ["normal", "italic"],
-  variable: "--font-libre",
+  variable: "--font-playfair",
   display: "swap",
 });
 
-const montserrat = Montserrat({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-montserrat",
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -58,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt" className={`${bebas.variable} ${libre.variable} ${montserrat.variable}`}>
+    <html lang="pt" className={`${playfair.variable} ${cormorant.variable} ${dmSans.variable}`}>
       <body className="antialiased">
         <Navbar />
         <main>{children}</main>

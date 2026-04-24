@@ -3,37 +3,33 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-/*
-  GNS "Let's Navigate Together" section:
-  - Background: #f8fafc (light blue-grey)
-  - Heading: Bebas Neue / 48px / #0e76bc
-  - Body: Montserrat / 18px / #222222 / line-height 32px
-*/
 export const NavigateSection = () => {
   return (
-    <section className="section" style={{ backgroundColor: "#f8fafc" }}>
-      <div className="container-narrow text-center">
+    <section className="section relative overflow-hidden" style={{ background: "var(--cream-warm)" }}>
+      {/* Decorative corner lines */}
+      <div className="absolute top-12 left-12 w-20 h-20 border-t border-l border-gold/10 hidden lg:block" />
+      <div className="absolute bottom-12 right-12 w-20 h-20 border-b border-r border-gold/10 hidden lg:block" />
+
+      <div className="container-narrow text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2
-            className="font-display uppercase"
-            style={{ fontSize: "clamp(32px, 4vw, 48px)", color: "#0e76bc" }}
-          >
-            VAMOS NAVEGAR JUNTOS
+          <div className="divider-gold mx-auto mb-8" />
+          <h2 className="font-display text-section-title text-navy mb-8">
+            Vamos Navegar <span className="italic text-gold">Juntos</span>
           </h2>
-          <p className="text-body-regular mt-8 max-w-3xl mx-auto" style={{ color: "#222222" }}>
+          <p className="text-body-regular max-w-2xl mx-auto text-body-light">
             Sabemos que enfrentar questões legais pode ser intimidante. É por isso
             que estamos aqui — para simplificar o complexo, defender os seus direitos
             e guiá-lo em cada passo. Seja um{" "}
-            <Link href="/areas-de-atuacao/direito-imigracao" className="text-[#0e76bc] hover:underline">
+            <Link href="/areas-de-atuacao/direito-imigracao" className="text-gold hover:text-gold-700 transition-colors border-b border-gold/30 hover:border-gold">
               processo de imigração
             </Link>{" "}
             ou uma{" "}
-            <Link href="/areas-de-atuacao/direito-trabalho" className="text-[#0e76bc] hover:underline">
+            <Link href="/areas-de-atuacao/direito-trabalho" className="text-gold hover:text-gold-700 transition-colors border-b border-gold/30 hover:border-gold">
               questão laboral
             </Link>
             , a sua tranquilidade é a nossa prioridade.

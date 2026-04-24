@@ -1,14 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-/*
-  GNS Testimonials:
-  - Carousel/slider of testimonial cards
-  - Quote in serif font, attribution below
-  - White bg cards with subtle shadow
-*/
 const testimonials = [
   {
     text: "A equipa da Sousa & Dias tratou do meu processo de autorização de residência com uma eficiência e humanidade que nunca encontrei noutro escritório. Recomendo sem hesitação.",
@@ -34,74 +28,93 @@ const testimonials = [
 
 export const TestimonialsSection = () => {
   const [current, setCurrent] = useState(0);
-  const next = () => setCurrent((p) => (p + 1) % testimonials.length);
+  const next = useCallback(() => setCurrent((p) => (p + 1) % testimonials.length), []);
   const prev = () => setCurrent((p) => (p - 1 + testimonials.length) % testimonials.length);
 
+  useEffect(() => {
+    const timer = setInterval(next, 6000);
+    return () => clearInterval(timer);
+  }, [next]);
+
   return (
-    <section className="section" style={{ backgroundColor: "#f8fafc" }}>
-      <div className="container-site">
+    <section className="section relative overflow-hidden" style={{ background: "var(--cream-warm)" }}>
+      {/* Large decorative quote mark */}
+      <div className="absolute top-16 left-1/2 -translate-x-1/2 font-display text-[20rem] text-navy/[0.02] leading-none pointer-events-none select-none hidden lg:block">
+        &ldquo;
+      </div>
+
+      <div className="container-site relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
-          <h2 className="section-title">TESTEMUNHOS</h2>
-          <p className="section-subtitle mt-2">O Que Dizem os Nossos Clientes</p>
+          <span className="section-overline block mb-4">Testemunhos</span>
+          <h2 className="section-title">
+            O que dizem os nossos <span className="italic text-gold">clientes</span>
+          </h2>
         </motion.div>
 
         <div className="max-w-3xl mx-auto relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -40 }}
-              transition={{ duration: 0.4 }}
-              className="bg-white p-10 md:p-14 shadow-sm text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="text-center py-8"
             >
-              <p className="font-serif italic text-[20px] md:text-[22px] leading-[36px] text-[#252525] mb-8">
+              <p className="font-serif italic text-[clamp(1.2rem,2.2vw,1.6rem)] text-navy leading-relaxed mb-10">
                 &ldquo;{testimonials[current].text}&rdquo;
               </p>
-              <p className="font-body text-[14px] font-bold text-[#252525] uppercase">
+
+              <div className="divider-gold mx-auto mb-6" style={{ width: "40px" }} />
+
+              <p className="font-body text-[13px] font-semibold tracking-[0.06em] text-navy uppercase">
                 {testimonials[current].author}
               </p>
-              <p className="font-body text-[13px] text-gray-500 mt-1">
+              <p className="font-body text-[12px] text-body-light mt-1">
                 {testimonials[current].role}
               </p>
             </motion.div>
           </AnimatePresence>
 
-          {/* Nav dots + arrows */}
-          <div className="flex justify-center items-center gap-4 mt-8">
+          {/* Navigation */}
+          <div className="flex justify-center items-center gap-6 mt-4">
             <button
               onClick={prev}
-              className="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center hover:border-[#0e76bc] hover:text-[#0e76bc] transition-colors"
+              className="w-10 h-10 border border-cream-300 flex items-center justify-center hover:border-gold hover:text-gold transition-all duration-300"
               aria-label="Anterior"
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
-            <div className="flex gap-2">
+
+            <div className="flex gap-2.5">
               {testimonials.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                    i === current ? "bg-[#0e76bc]" : "bg-gray-300"
-                  }`}
+                  className="group relative w-8 h-[2px] transition-all duration-500"
                   aria-label={`Testemunho ${i + 1}`}
-                />
+                >
+                  <div className={`absolute inset-0 transition-colors duration-500 ${
+                    i === current ? "bg-gold" : "bg-cream-300"
+                  }`} />
+                </button>
               ))}
             </div>
+
             <button
               onClick={next}
-              className="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center hover:border-[#0e76bc] hover:text-[#0e76bc] transition-colors"
+              className="w-10 h-10 border border-cream-300 flex items-center justify-center hover:border-gold hover:text-gold transition-all duration-300"
               aria-label="Seguinte"
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </button>

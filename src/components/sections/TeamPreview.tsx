@@ -4,81 +4,73 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-/*
-  GNS Founder section:
-  - 2 columns: image left, text right
-  - Heading pattern: Bebas 104px #0e76bc + Libre italic 24px #0e76bc
-  - Quote: italic, serif
-  - "VIEW FULL BIO" link
-*/
 export const TeamPreview = () => {
   return (
-    <section className="bg-white section">
-      <div className="container-site">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
-        >
-          <h2 className="section-title">ENCONTRAR</h2>
-          <p className="section-subtitle mt-2">A Força Motriz Por Trás da Nossa Inovação Jurídica</p>
-        </motion.div>
+    <section className="relative overflow-hidden" style={{ background: "var(--navy)" }}>
+      {/* Ambient light */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse 50% 60% at 25% 50%, rgba(201, 169, 110, 0.04) 0%, transparent 70%)",
+        }}
+      />
 
-        {/* 2-column layout: photo left / quote right */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container-site relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+          {/* Photo */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8 }}
+            className="relative"
           >
-            <div className="relative aspect-[3/4] max-w-[400px] mx-auto lg:mx-0">
+            <div className="relative aspect-[3/4] lg:aspect-auto lg:h-full min-h-[500px]">
               <Image
-                src="/images/team/eduardo-dias.jpg"
+                src="/images/team/eduardo-principal.jpg"
                 alt="Dr. Eduardo Dias"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 400px"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
+              {/* Gradient overlay for text readability on mobile */}
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent lg:hidden" />
             </div>
           </motion.div>
 
+          {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="flex flex-col justify-center px-8 lg:px-16 xl:px-20 py-20 lg:py-28"
           >
-            <h3
-              className="font-display uppercase mb-4"
-              style={{ fontSize: "clamp(28px, 3vw, 40px)", color: "#252525", letterSpacing: "2px" }}
-            >
-              DR. EDUARDO DIAS
-            </h3>
+            <span className="section-overline block mb-6">Sócio Fundador</span>
 
-            <p className="font-serif italic text-[18px] leading-[32px] text-[#252525] mb-6">
+            <h2 className="font-display text-section-title text-white mb-3">
+              Dr. Eduardo <span className="italic text-gold">Dias</span>
+            </h2>
+
+            <p className="font-body text-[13px] tracking-[0.06em] text-white/30 uppercase mb-8">
+              Cédula OA n.º 59368P · Especialista em Direito de Imigração e Trabalho
+            </p>
+
+            <div className="divider-gold mb-8" />
+
+            <blockquote className="font-serif italic text-[clamp(1.1rem,1.8vw,1.35rem)] text-white/70 leading-relaxed mb-10">
               &ldquo;Acredito que todas as pessoas merecem acesso a justiça de qualidade,
               independentemente da sua origem. É esse compromisso que me move todos os dias.
               Funcionamos como uma extensão da equipa dos nossos clientes — ouvimos primeiro,
               aconselhamos depois, e lutamos até ao fim.&rdquo;
-            </p>
-
-            <p className="font-body text-[14px] text-[#252525] mb-1">
-              <strong>Sócio Fundador</strong> · Cédula OA n.º 59368P
-            </p>
-            <p className="font-body text-[14px] text-gray-500 mb-6">
-              Especialista em Direito de Imigração e Trabalho
-            </p>
+            </blockquote>
 
             <Link
               href="/equipa"
-              className="font-display text-[16px] tracking-[2px] uppercase text-[#0e76bc] hover:text-[#0a5d96] transition-colors inline-flex items-center gap-2"
+              className="group inline-flex items-center gap-3 font-body text-[12px] tracking-[0.12em] uppercase text-gold hover:text-gold-300 transition-colors duration-300"
             >
-              VER BIOGRAFIA COMPLETA
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              Ver Biografia Completa
+              <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
